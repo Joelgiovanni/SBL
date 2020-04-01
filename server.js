@@ -54,8 +54,6 @@ app.use('/auth', router);
 /*Adds the react production build to serve react requests*/
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-const port = process.env.PORT || 5000;
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + 'client/build/index.html'));
 });
