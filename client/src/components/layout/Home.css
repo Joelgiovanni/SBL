@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,800&display=swap');
+.start-today {
+  color: #18d26e;
+}
+
+.sub-title {
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.submit-btn {
+  border-color: #18d26e;
+  border-radius: 1px;
+  font-weight: 100;
+  background-color: black;
+  color: white;
+  letter-spacing: 2px;
+  padding: 10px;
+  z-index: 999999;
+}

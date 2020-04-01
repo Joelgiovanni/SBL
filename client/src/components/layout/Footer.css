@@ -1,0 +1,40 @@
+.footer-container {
+  background-color: black;
+  height: 200px;
+}
+
+.disclaimer {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+}
+
+.email-footer {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.instagram-footer {
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fa-instagram {
+  font-size: 20px;
+}
+.footer-contact {
+  color: white;
+  margin-top: -12px;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 15px;
+}
+
+.footer-date {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mail-icon-footer {
+  color: white;
+}

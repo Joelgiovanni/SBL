@@ -1,0 +1,13 @@
+.users-container {
+  margin-top: 25% !important;
+  margin-bottom: 10%;
+}
+
+.user-card {
+  background-color: black;
+  color: white;
+}
+
+.user-card-body {
+  border: 1px solid white;
+}

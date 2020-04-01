@@ -1,0 +1,22 @@
+.success-container {
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+.success-header {
+  color: #18d26e;
+}
+.good-luck {
+  color: #18d26e;
+  text-transform: uppercase;
+}
+
+.started {
+  color: white !important;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.started:hover {
+  color: red !important;
+}

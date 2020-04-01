@@ -1,0 +1,23 @@
+.new-pick-container {
+  margin-top: 15% !important;
+  margin-bottom: 10%;
+}
+
+.text-area-pick {
+  white-space: pre-wrap;
+}
+
+.form-heading {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.add-btn {
+  background-color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 3px;
+  border-radius: 2px;
+}

@@ -1,0 +1,26 @@
+#header {
+  margin-top: 4%;
+  position: absolute;
+}
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  background: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-toggler {
+  background-color: #18d26e;
+}
+.navbar-toggler-icon.icon-bar {
+  background-color: black !important;
+}
+
+@media screen and (max-width: 991px) {
+  #header {
+    display: none;
+  }
+}
