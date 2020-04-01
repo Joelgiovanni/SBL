@@ -51,13 +51,14 @@ app.use(
 // Routes / Router
 app.use('/auth', router);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+/*Adds the react production build to serve react requests*/
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
+const port = process.env.PORT || 5000;
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + 'client/build/index.html'));
+});
 
 const port = process.env.PORT || 5000;
 
