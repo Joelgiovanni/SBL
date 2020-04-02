@@ -31,20 +31,14 @@ export default class Footer extends Component {
                       Start Today
                     </Link>{' '}
                   </li>
-                  <li>
-                    <Link className='' to='/aboutUs'>
-                      About Us
-                    </Link>{' '}
-                  </li>
                 </ul>
               </div>
 
               <div className='col-lg-3 col-md-6 footer-contact'>
                 <h4>Contact Us</h4>
                 <p>
-                  Denver, CO
+                  Based in CO <i class='fas fa-map-marker-alt ml-2'></i>
                   <br />
-                  <strong>Phone:</strong> 720-346-3787
                   <br />
                   <strong>contactsportsbetleader@gmail.com</strong>
                   <br />
