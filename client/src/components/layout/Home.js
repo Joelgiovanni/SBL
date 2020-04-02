@@ -22,7 +22,7 @@ class Home extends Component {
           <div className='row'>
             <div className='col-lg-4 box'>
               <i className='ion-ios-heart-outline'></i>
-              <h2 className='title sub-title'>Monthly</h2>
+              <h2 className='title sub-title'>Daily</h2>
               <p className='description'>
                 A Daily pass for all of our picks is available for only $20
                 <br />{' '}
