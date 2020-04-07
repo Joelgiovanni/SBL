@@ -12,9 +12,16 @@ export default class Footer extends Component {
               <div className='col-lg-3 col-md-6 footer-info'>
                 <h3>The Sports Bet Leader</h3>
                 <p>
-                  The sports Bet Leader is not responsible for any decisions
-                  made based off our picks. Bet at your own risk. Results are
-                  not always guaranteed.
+                  Disclaimer: This website and any consulting or advice
+                  contained therein, is not intended to provide bookmaking
+                  services or gambling capabilities. The Sports Bet Leader
+                  provides consulting services and is not responsible for any
+                  decisions made, financial or otherwise, based on information
+                  provided within this website. The Sports Bet Leader does not
+                  guarantee winnings or results. Thus, The Sports Bet Leader is
+                  not responsible in any way regarding picks and predictions. If
+                  you encounter gambling problems, please contact your local
+                  authorities.
                 </p>
               </div>
 
