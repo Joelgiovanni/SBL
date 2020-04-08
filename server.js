@@ -21,10 +21,10 @@ mongoose
     // sets how many times to try reconnecting
     reconnectTries: Number.MAX_VALUE,
     // sets the delay between every retry (milliseconds)
-    reconnectInterval: 1000
+    reconnectInterval: 1000,
   })
   .then(() => console.log('Mlab is connected'))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 // Add the react production build to serve react requests
 
@@ -44,19 +44,24 @@ app.use(
   cors({
     origin: ['http://localhost:3000'],
     methods: ['GET', 'POST', 'DELETE'],
-    credentials: true // enable set cookie
+    credentials: true, // enable set cookie
   })
 );
 
 // Routes / Router
 app.use('/auth', router);
 
-/*Adds the react production build to serve react requests*/
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + 'client/build/index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+  });
+} else {
+  app.use(express.static(path.join(__dirname, '/client/public')));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, './client/public/index.html'));
+  });
+}
 
 const port = process.env.PORT || 5000;
 
