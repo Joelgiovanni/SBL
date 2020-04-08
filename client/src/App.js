@@ -10,6 +10,7 @@ import NewNav from './components/layout/NewNav';
 import Home from './components/layout/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import RegisterAdmin from './components/auth/RegisterAdmin';
 import Dashboard from './components/layout/Dashboard';
 import AdminPicks from './components/layout/AdminPicks';
 import Subscriptions from './components/layout/Subscriptions';
@@ -44,6 +45,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
+          <Route exact path='/admin1997stayaway' component={RegisterAdmin} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/adminPicks' component={AdminPicks} />
           <Route exact path='/subscriptions' component={Subscriptions} />

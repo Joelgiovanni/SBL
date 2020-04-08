@@ -26,9 +26,6 @@ class Home extends Component {
               <p className='description'>
                 A Daily pass for all of our picks is available for only $20
                 <br />{' '}
-                <span className='text-danger mt-2'>
-                  *Must be logged in to purchase
-                </span>
               </p>
               <button className='submit-btn mt-2'>
                 <Link className='' to='/subscriptions'>
@@ -40,11 +37,9 @@ class Home extends Component {
             <div className='col-lg-4 box box-bg'>
               <h3 className='title sub-title'>Weekly</h3>
               <p className='description'>
-                Weekly passes for all of our picks is available for only $100{' '}
+                Weekly passes for all of our picks is available for only $100. -
+                (7 Calendars Days)
                 <br />{' '}
-                <span className='text-danger mt-2'>
-                  *Must be logged in to purchase
-                </span>
               </p>
               <button className='submit-btn mt-2'>
                 <Link className='' to='/subscriptions'>
@@ -58,11 +53,8 @@ class Home extends Component {
               <h2 className='title sub-title'>Monthly</h2>
               <p className='description'>
                 If you want the most bang for your buck, a monthly pass is the
-                way to go for $350
+                way to go for $350. - (31 Calendar Days)
                 <br />{' '}
-                <span className='text-danger mt-2'>
-                  *Must be logged in to purchase
-                </span>
               </p>
               <button className='submit-btn mt-2'>
                 <Link className='' to='/subscriptions'>

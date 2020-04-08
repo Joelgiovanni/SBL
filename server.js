@@ -51,6 +51,19 @@ app.use(
 // Routes / Router
 app.use('/auth', router);
 
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   app.get('/*', function (req, res) {
@@ -62,6 +75,19 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, './client/public/index.html'));
   });
 }
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
+// **************************VERY IMPORTANT FOR PRODUCTION*****************************************
 
 const port = process.env.PORT || 5000;
 
