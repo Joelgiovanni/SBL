@@ -11,7 +11,7 @@ export default class Footer extends Component {
             <div className='row'>
               <div className='col-lg-3 col-md-6 footer-info'>
                 <h3>The Sports Bet Leader</h3>
-                <p>
+                <p className='disclaimer'>
                   Disclaimer: This website and any consulting or advice
                   contained therein, is not intended to provide bookmaking
                   services or gambling capabilities. The Sports Bet Leader

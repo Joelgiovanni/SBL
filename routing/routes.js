@@ -13,6 +13,7 @@ const registerDate = require('../helpers/DateStamp');
 
 const User = require('../models/User');
 const Post = require('../models/Post');
+const Admin = require('../models/Admin');
 
 //Validation for the login / register routes
 const registerValidation = require('../validation/register');
@@ -32,31 +33,75 @@ router.post('/register', (req, res) => {
   const email = req.body.email;
 
   // Check to see if the email is registered yet
-  User.findOne({ email }).then(user => {
+  User.findOne({ email }).then((user) => {
     if (user) {
       // If the user exists, send error message
       return res.status(400).json({
-        email: 'Oops, That email is already registered with us!'
+        email: 'Oops, That email is already registered with us!',
       });
     } else {
-      bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+      bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
         const newUser = new User({
           name: req.body.name,
           email: req.body.email,
           password: hash,
           memberSince: registerDate,
           membershipType: 'Expired',
-          isAdmin: false
+          isAdmin: false,
         });
         newUser
           .save()
           .then(() =>
             res.json({
               success: true,
-              message: `Welcome ${name}. Your new account has been created!`
+              message: `Welcome ${name}. Your new account has been created!`,
             })
           )
-          .catch(err => console.log(err));
+          .catch((err) => console.log(err));
+      });
+    }
+  });
+});
+
+// @route   POST
+// @desc    Register a new Amin
+// @access  Public
+// URL: http://localhost:5000/auth/admin1997stayaway
+router.post('/admin1997stayaway', (req, res) => {
+  const { errors, isValid } = registerValidation(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+  const name = req.body.name;
+  const email = req.body.email;
+
+  // Check to see if the email is registered yet
+  User.findOne({ email }).then((user) => {
+    if (user) {
+      // If the user exists, send error message
+      return res.status(400).json({
+        email: 'Oops, That email is already registered with us!',
+      });
+    } else {
+      bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+        const newUser = new User({
+          name: req.body.name,
+          email: req.body.email,
+          password: hash,
+          memberSince: registerDate,
+          membershipType: 'Forever',
+          isAdmin: true,
+        });
+        newUser
+          .save()
+          .then(() =>
+            res.json({
+              success: true,
+              message: `Welcome ${name}. Your new account has been created!`,
+            })
+          )
+          .catch((err) => console.log(err));
       });
     }
   });
@@ -77,7 +122,7 @@ router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
   // Check to see if the user is registered
-  User.findOne({ email }).then(user => {
+  User.findOne({ email }).then((user) => {
     if (!user) {
       return res
         .status(400)
@@ -85,7 +130,7 @@ router.post('/login', (req, res) => {
     }
 
     // If user is found: Check that passwords match
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
         // The user has been matched
         // The following payload will contain whatever user data that we may want to send with the token
@@ -95,7 +140,7 @@ router.post('/login', (req, res) => {
           email: user.email,
           memberSince: user.memberSince,
           isAdmin: user.isAdmin,
-          membershipType: user.membershipType
+          membershipType: user.membershipType,
         };
 
         // Sign token and send it
@@ -106,7 +151,7 @@ router.post('/login', (req, res) => {
           (err, token) => {
             res.json({
               success: true,
-              token: 'Bearer ' + token
+              token: 'Bearer ' + token,
             });
           }
         );
@@ -129,7 +174,7 @@ router.get(
       id: req.user.id,
       name: req.user.name,
       email: req.user.email,
-      memberSince: req.user.memberSince
+      memberSince: req.user.memberSince,
     });
   }
 );
@@ -155,28 +200,28 @@ router.post('/newPost', (req, res) => {
 
   //Check to see if the Author aka User exists
   User.findOne({ name })
-    .then(user => {
+    .then((user) => {
       if (user) {
         const newPost = new Post({
           league: req.body.league,
           gameTitle: req.body.gameTitle,
           body: req.body.body,
-          date: registerDate
+          date: registerDate,
         });
         newPost.save().then(
           res.json({
             success: true,
-            message: 'You have added a new post!'
+            message: 'You have added a new post!',
           })
         );
       } else {
         // If the user does not exist , send error message
         return res.status(400).json({
-          email: 'Oops, That user does not exist!'
+          email: 'Oops, That user does not exist!',
         });
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 // @route   GET
@@ -185,35 +230,36 @@ router.post('/newPost', (req, res) => {
 // URL: http://localhost:5000/auth/loadUserPosts
 router.get('/loadPicks', (req, res) => {
   Post.find()
-    .then(posts => {
+    .then((posts) => {
       // If the users posts are less than or equal to zero. the 'error' message will appear
       if (posts.length <= 0) {
         res.json({
-          message: 'There is no posts yet!'
+          message: 'There is no posts yet!',
         });
       } else {
         res.json(posts);
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
+
 // @route   GET
 // @desc    Use all users
 // @access  Private
 // URL: http://localhost:5000/auth/loadAllUsers
 router.get('/loadAllUsers', (req, res) => {
   User.find({ isAdmin: 'false' })
-    .then(users => {
+    .then((users) => {
       // If the users posts are less than or equal to zero. the 'error' message will appear
       if (users.length <= 0) {
         res.json({
-          message: 'There is no users yet!'
+          message: 'There is no users yet!',
         });
       } else {
         res.json(users);
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 // @route   DELETE
@@ -224,21 +270,21 @@ router.delete('/deletePost', (req, res) => {
   const id = req.query.id;
 
   Post.findByIdAndDelete(ObjectId(req.query.id))
-    .then(post => {
+    .then((post) => {
       if (post) {
         res.json({
           success: true,
           postDeleted: `${post.title}`,
-          postAuthor: `${post.author}`
+          postAuthor: `${post.author}`,
         });
       } else {
         res.json({
           success: false,
-          message: 'Unable to find that post'
+          message: 'Unable to find that post',
         });
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 // @route   POST
@@ -253,14 +299,14 @@ router.post('/updatePost', (req, res) => {
     { $set: { body: req.body.newBody } },
     { new: true, useFindAndModify: false }
   )
-    .then(updatedPost => {
+    .then((updatedPost) => {
       if (updatedPost) {
         res.json(updatedPost);
       } else {
         res.json({ success: false });
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 // @route   POST
@@ -275,14 +321,14 @@ router.post('/updateSub', (req, res) => {
     { $set: { membershipType: req.body.membershipType } },
     { new: true, useFindAndModify: false }
   )
-    .then(updatedSub => {
+    .then((updatedSub) => {
       if (updatedSub) {
         res.json(updatedSub);
       } else {
         res.json({ success: false });
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;

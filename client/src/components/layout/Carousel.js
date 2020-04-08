@@ -18,6 +18,7 @@ export default class Carousel extends Component {
               <div className='carousel-item active'>
                 <div className='carousel-background'>
                   <img
+                    class='carousel-imgg'
                     src='https://images.unsplash.com/photo-1514511719-9f5849dc16d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80'
                     alt=''
                   />
@@ -40,6 +41,7 @@ export default class Carousel extends Component {
               <div className='carousel-item'>
                 <div className='carousel-background'>
                   <img
+                    class='carousel-imgg'
                     src='https://images.unsplash.com/photo-1529663297269-6d349ec39b57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
                     alt=''
                   />
@@ -62,6 +64,7 @@ export default class Carousel extends Component {
               <div className='carousel-item'>
                 <div className='carousel-background'>
                   <img
+                    class='carousel-imgg'
                     src='https://images.unsplash.com/photo-1571056642234-71f5b2c5c0c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
                     alt=''
                   />

@@ -12,7 +12,6 @@ class Home extends Component {
     return (
       <section id='featured-services'>
         <Carousel />
-
         <div className='container mb-5'>
           <div className='row mt-3 mb-5'>
             <div className='col-md-12'>
@@ -83,7 +82,7 @@ class Home extends Component {
               </p>
             </div>
             <div className='col-md-6 text-center'>
-              <h1 className='big-header mt-5'>Win Big</h1>
+              <h1 className='big-header mt-5'>Collect Big</h1>
               <i class='fas fa-dollar-sign big-icon'></i>
               <p className='big-text mt-5 mb-4'>
                 The Sports Bet Leader teams knows how to put money in your
