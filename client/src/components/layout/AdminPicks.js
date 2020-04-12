@@ -12,7 +12,7 @@ class Dashboard extends Component {
     this.state = {
       loaded: false,
       posts: {},
-      isAdmin: this.props.auth.user.isAdmin
+      isAdmin: this.props.auth.user.isAdmin,
     };
   }
 
@@ -29,29 +29,29 @@ class Dashboard extends Component {
     this.fetchPosts();
   }
 
-  fetchPosts = e => {
+  fetchPosts = (e) => {
     axios
       .get('/auth/loadPicks')
-      .then(res => {
+      .then((res) => {
         const fetchedPosts = res.data;
         // Set the state for the users posts
         this.setState({ posts: fetchedPosts, loaded: true });
         console.log(this.state);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
-  deletePost = id => {
+  deletePost = (id) => {
     axios
       .delete('/auth/deletePost', {
         params: {
-          id
-        }
+          id,
+        },
       })
-      .then(res => {
+      .then((res) => {
         this.fetchPosts();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   render() {
@@ -61,7 +61,7 @@ class Dashboard extends Component {
     if (this.state.posts.length > 0 && this.state.loaded === true) {
       const posts = this.state.posts;
 
-      content = posts.map(post => (
+      content = posts.map((post) => (
         <Card
           title={post.gameTitle}
           league={post.league}
@@ -75,7 +75,9 @@ class Dashboard extends Component {
       content = (
         <div className='row'>
           <div className='col text-center'>
-            <p className='started'>No picks for today... YET.</p>
+            <p className='started'>
+              Welcome back, todays picks will be available soon!
+            </p>
           </div>
         </div>
       );
@@ -98,12 +100,12 @@ class Dashboard extends Component {
 
 // Setting up Redux in this component
 Dashboard.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 });
 
 // WithRouter will pass updated match, location, and history props to the wrapped component whenever it renders.

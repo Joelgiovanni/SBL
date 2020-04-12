@@ -16,7 +16,7 @@ class Subscriptions extends Component {
   }
 
   // One day pass - Checkout -LIVE
-  oneDayLive = e => {
+  oneDayLive = (e) => {
     var stripe = window.Stripe('pk_live_UNYbDYMJWOfLD4CBy0yOvGhl');
 
     stripe
@@ -29,9 +29,9 @@ class Subscriptions extends Component {
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
         successUrl: 'http://localhost:3000/success',
-        cancelUrl: 'http://localhost:3000/subscriptions'
+        cancelUrl: 'http://localhost:3000/subscriptions',
       })
-      .then(function(result) {
+      .then(function (result) {
         if (result.error) {
           // If `redirectToCheckout` fails due to a browser or network
           // error, display the localized error message to your customer.
@@ -43,7 +43,7 @@ class Subscriptions extends Component {
       });
   };
   // One day pass - Checkout
-  oneDay = e => {
+  oneDay = (e) => {
     var stripe = window.Stripe('pk_test_ltoEM3MsR1sCL2Vd3C7lvIM2');
 
     stripe
@@ -56,9 +56,9 @@ class Subscriptions extends Component {
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
         successUrl: 'http://localhost:3000/success',
-        cancelUrl: 'http://localhost:3000/subscriptions'
+        cancelUrl: 'http://localhost:3000/subscriptions',
       })
-      .then(function(result) {
+      .then(function (result) {
         if (result.error) {
           // If `redirectToCheckout` fails due to a browser or network
           // error, display the localized error message to your customer.
@@ -71,13 +71,13 @@ class Subscriptions extends Component {
   };
 
   // Weekly pass - Checkout
-  weekly = e => {
+  weekly = (e) => {
     var stripe = window.Stripe('pk_test_ltoEM3MsR1sCL2Vd3C7lvIM2');
 
     var checkoutButton = document.getElementById(
       'checkout-button-sku_GrsrY3NHUfoitu'
     );
-    checkoutButton.addEventListener('click', function() {
+    checkoutButton.addEventListener('click', function () {
       // When the customer clicks on the button, redirect
       // them to Checkout.
       stripe
@@ -90,9 +90,9 @@ class Subscriptions extends Component {
           // Instead use one of the strategies described in
           // https://stripe.com/docs/payments/checkout/fulfillment
           successUrl: 'http://localhost:3000/success',
-          cancelUrl: 'http://localhost:3000/subscriptions'
+          cancelUrl: 'http://localhost:3000/subscriptions',
         })
-        .then(function(result) {
+        .then(function (result) {
           if (result.error) {
             // If `redirectToCheckout` fails due to a browser or network
             // error, display the localized error message to your customer.
@@ -103,13 +103,13 @@ class Subscriptions extends Component {
     });
   };
   // Monthly pass - Checkout
-  monthly = e => {
+  monthly = (e) => {
     var stripe = window.Stripe('pk_test_ltoEM3MsR1sCL2Vd3C7lvIM2');
 
     var checkoutButton = document.getElementById(
       'checkout-button-sku_Grt1g8YKuVRFYp'
     );
-    checkoutButton.addEventListener('click', function() {
+    checkoutButton.addEventListener('click', function () {
       // When the customer clicks on the button, redirect
       // them to Checkout.
       stripe
@@ -122,9 +122,9 @@ class Subscriptions extends Component {
           // Instead use one of the strategies described in
           // https://stripe.com/docs/payments/checkout/fulfillment
           successUrl: 'http://localhost:3000/success',
-          cancelUrl: 'http://localhost:3000/subscriptions'
+          cancelUrl: 'http://localhost:3000/subscriptions',
         })
-        .then(function(result) {
+        .then(function (result) {
           if (result.error) {
             // If `redirectToCheckout` fails due to a browser or network
             // error, display the localized error message to your customer.
@@ -162,7 +162,7 @@ class Subscriptions extends Component {
           <div className='col-md-4'>
             <CalendarWeek size='150' className='why-icon mt-5' />
             <h6 className='price-header mt-3'>
-              Weekly: <strong>All Picks</strong> $150
+              Weekly: <strong>All Picks</strong> $100
             </h6>{' '}
             <button
               className='pay-now-button'
@@ -197,12 +197,12 @@ class Subscriptions extends Component {
 
 // Setting up Redux in this component
 Subscriptions.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 });
 
 // WithRouter will pass updated match, location, and history props to the wrapped component whenever it renders.

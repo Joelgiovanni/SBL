@@ -48,3 +48,12 @@
   padding: 10px;
   z-index: 999999;
 }
+
+.picks-day {
+  border-bottom: 1px solid white;
+  margin-bottom: 100px !important;
+}
+
+.picks-description {
+  color: red;
+}

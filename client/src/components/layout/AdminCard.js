@@ -5,11 +5,11 @@ class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      changed: false
+      changed: false,
     };
   }
 
-  deleteOnClick = e => {
+  deleteOnClick = (e) => {
     this.props.delete(this.props.id);
   };
 
@@ -70,11 +70,16 @@ class Card extends Component {
             </div>
           </div>
           <p className='card-text'>{this.props.body}</p>
-          <button type='button' data-toggle='modal' data-target={targetModal}>
+          <button
+            class='delete-btn'
+            type='button'
+            data-toggle='modal'
+            data-target={targetModal}
+          >
             Delete Post
           </button>
         </div>
-        <div className='card-footer text-muted'>{this.props.date}</div>
+        <div className='card-footer text-success'>{this.props.date}</div>
       </div>
     );
   }

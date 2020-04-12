@@ -1,0 +1,28 @@
+.card-body {
+  white-space: pre-wrap !important; /* <-- THIS PRESERVES THE LINE BREAKS */
+}
+
+.card-header {
+  font-size: 30px;
+  color: green;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-title {
+  color: black;
+  border-bottom: 1px solid green;
+  font-family: 28px;
+  padding-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.delete-btn {
+  color: white;
+  border-color: red;
+  color: red;
+  padding: 10px;
+  border-radius: 4px;
+}
