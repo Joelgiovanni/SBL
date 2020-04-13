@@ -17,11 +17,11 @@ class Subscriptions extends Component {
 
   // One day pass - Checkout -LIVE
   oneDayLive = (e) => {
-    var stripe = window.Stripe('pk_live_UNYbDYMJWOfLD4CBy0yOvGhl');
+    var stripe = window.Stripe('pk_live_ZuXcysdButUm1bH2OK5eJBNi00eqonv5OH');
 
     stripe
       .redirectToCheckout({
-        items: [{ sku: 'sku_H0zAhXiC1Q2iZp', quantity: 1 }],
+        items: [{ sku: 'sku_H5kH3mHxGuG0lu', quantity: 1 }],
 
         // Do not rely on the redirect to the successUrl for fulfilling
         // purchases, customers may not always reach the success_url after
@@ -151,7 +151,7 @@ class Subscriptions extends Component {
             </h6>{' '}
             <button
               className='pay-now-button'
-              id='checkout-button-sku_H0zAhXiC1Q2iZp'
+              id='checkout-button-sku_H5kH3mHxGuG0lu'
               role='link'
               onClick={this.oneDayLive}
             >
