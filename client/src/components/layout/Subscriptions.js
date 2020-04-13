@@ -28,8 +28,8 @@ class Subscriptions extends Component {
         // a successful payment.
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: 'http://localhost:3000/success',
-        cancelUrl: 'http://localhost:3000/subscriptions',
+        successUrl: 'https://www.thesportsbetleader.com/success',
+        cancelUrl: 'https://www.thesportsbetleader.com/subscriptions',
       })
       .then(function (result) {
         if (result.error) {
