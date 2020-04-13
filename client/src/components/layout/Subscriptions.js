@@ -44,19 +44,19 @@ class Subscriptions extends Component {
   };
   // One day pass - Checkout
   oneDay = (e) => {
-    var stripe = window.Stripe('pk_test_ltoEM3MsR1sCL2Vd3C7lvIM2');
+    var stripe = window.Stripe('pk_live_ZuXcysdButUm1bH2OK5eJBNi00eqonv5OH');
 
     stripe
       .redirectToCheckout({
-        items: [{ sku: 'sku_GrBBHftw3ZSXns', quantity: 1 }],
+        items: [{ sku: 'sku_H5kegxSWoHuqYQ', quantity: 1 }],
 
         // Do not rely on the redirect to the successUrl for fulfilling
         // purchases, customers may not always reach the success_url after
         // a successful payment.
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: 'http://localhost:3000/success',
-        cancelUrl: 'http://localhost:3000/subscriptions',
+        successUrl: 'https://www.thesportsbetleader.com/success',
+        cancelUrl: 'https://www.thesportsbetleader.com/subscriptions',
       })
       .then(function (result) {
         if (result.error) {
@@ -72,7 +72,7 @@ class Subscriptions extends Component {
 
   // Weekly pass - Checkout
   weekly = (e) => {
-    var stripe = window.Stripe('pk_test_ltoEM3MsR1sCL2Vd3C7lvIM2');
+    var stripe = window.Stripe('pk_live_ZuXcysdButUm1bH2OK5eJBNi00eqonv5OH');
 
     var checkoutButton = document.getElementById(
       'checkout-button-sku_GrsrY3NHUfoitu'
@@ -82,15 +82,15 @@ class Subscriptions extends Component {
       // them to Checkout.
       stripe
         .redirectToCheckout({
-          items: [{ sku: 'sku_GrsrY3NHUfoitu', quantity: 1 }],
+          items: [{ sku: 'sku_H5kzFJtBoO6IG1', quantity: 1 }],
 
           // Do not rely on the redirect to the successUrl for fulfilling
           // purchases, customers may not always reach the success_url after
           // a successful payment.
           // Instead use one of the strategies described in
           // https://stripe.com/docs/payments/checkout/fulfillment
-          successUrl: 'http://localhost:3000/success',
-          cancelUrl: 'http://localhost:3000/subscriptions',
+          successUrl: 'https://www.thesportsbetleader.com/success',
+          cancelUrl: 'https://www.thesportsbetleader.com/subscriptions',
         })
         .then(function (result) {
           if (result.error) {
@@ -104,7 +104,7 @@ class Subscriptions extends Component {
   };
   // Monthly pass - Checkout
   monthly = (e) => {
-    var stripe = window.Stripe('pk_test_ltoEM3MsR1sCL2Vd3C7lvIM2');
+    var stripe = window.Stripe('pk_live_ZuXcysdButUm1bH2OK5eJBNi00eqonv5OH');
 
     var checkoutButton = document.getElementById(
       'checkout-button-sku_Grt1g8YKuVRFYp'
@@ -114,15 +114,15 @@ class Subscriptions extends Component {
       // them to Checkout.
       stripe
         .redirectToCheckout({
-          items: [{ sku: 'sku_Grt1g8YKuVRFYp', quantity: 1 }],
+          items: [{ sku: 'sku_H5l1bG6cBGAxm2', quantity: 1 }],
 
           // Do not rely on the redirect to the successUrl for fulfilling
           // purchases, customers may not always reach the success_url after
           // a successful payment.
           // Instead use one of the strategies described in
           // https://stripe.com/docs/payments/checkout/fulfillment
-          successUrl: 'http://localhost:3000/success',
-          cancelUrl: 'http://localhost:3000/subscriptions',
+          successUrl: 'https://www.thesportsbetleader.com/success',
+          cancelUrl: 'https://www.thesportsbetleader.com/subscriptions',
         })
         .then(function (result) {
           if (result.error) {
@@ -151,7 +151,7 @@ class Subscriptions extends Component {
             </h6>{' '}
             <button
               className='pay-now-button'
-              id='checkout-button-sku_H5kH3mHxGuG0lu'
+              id='checkout-button-sku_H5kegxSWoHuqYQ'
               role='link'
               onClick={this.oneDayLive}
             >
@@ -166,7 +166,7 @@ class Subscriptions extends Component {
             </h6>{' '}
             <button
               className='pay-now-button'
-              id='checkout-button-sku_GrsrY3NHUfoitu'
+              id='checkout-button-sku_H5kzFJtBoO6IG1'
               role='link'
               onClick={this.weekly}
             >
@@ -181,7 +181,7 @@ class Subscriptions extends Component {
             </h6>{' '}
             <button
               className='pay-now-button'
-              id='checkout-button-sku_Grt1g8YKuVRFYp'
+              id='checkout-button-sku_H5l1bG6cBGAxm2'
               role='link'
               onClick={this.monthly}
             >
