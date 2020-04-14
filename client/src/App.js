@@ -18,6 +18,7 @@ import NewPost from './components/layout/newPost';
 import Footer from './components/layout/Footer';
 import LoadUsers from './components/layout/LoadUsers';
 import Success from './components/layout/Success';
+import ScrollToTop from './components/layout/ScrollTop';
 
 // KEEPS A USER LOGGED IN ON REFRESH && this logic will check for a valid token on every route and the token must either be manually destroyed with the logout function or the token must expire
 if (localStorage.jwtToken) {
@@ -40,20 +41,22 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <NewNav />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/register' component={Register} />
-          <Route exact path='/admin1997stayaway' component={RegisterAdmin} />
-          <Route exact path='/dashboard' component={Dashboard} />
-          <Route exact path='/adminPicks' component={AdminPicks} />
-          <Route exact path='/subscriptions' component={Subscriptions} />
-          <Route exact path='/newPost' component={NewPost} />
-          <Route exact path='/LoadUsers' component={LoadUsers} />
-          <Route exact path='/success' component={Success} />
-        </Switch>
-        <Footer />
+        <ScrollToTop>
+          <NewNav />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/admin1997stayaway' component={RegisterAdmin} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/adminPicks' component={AdminPicks} />
+            <Route exact path='/subscriptions' component={Subscriptions} />
+            <Route exact path='/newPost' component={NewPost} />
+            <Route exact path='/LoadUsers' component={LoadUsers} />
+            <Route exact path='/success' component={Success} />
+          </Switch>
+          <Footer />
+        </ScrollToTop>
       </Router>
     </Provider>
   );

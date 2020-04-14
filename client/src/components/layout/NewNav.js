@@ -7,7 +7,7 @@ import './Nav.css';
 
 class NewNav extends Component {
   // Action to log out a user || Destroy token || set isAuthenticated === false
-  logout = e => {
+  logout = (e) => {
     this.props.logoutUser();
     this.props.history.push('/home');
   };
@@ -23,7 +23,7 @@ class NewNav extends Component {
             <div id='logo' className='pull-left'>
               <h1>
                 <Link className='scrollto' to='/'>
-                  The Sports Bet Leader
+                  The Sports Bet Leader <span className='llc'>LLC</span>
                 </Link>{' '}
               </h1>
             </div>
@@ -75,7 +75,7 @@ class NewNav extends Component {
             <div id='logo' className='pull-left'>
               <h1>
                 <Link className='scrollto' to='/'>
-                  The Sports Bet Leader
+                  The Sports Bet Leader <span className='llc'>LLC</span>
                 </Link>{' '}
               </h1>
             </div>
@@ -134,7 +134,7 @@ class NewNav extends Component {
             <div id='logo' className='pull-left'>
               <h1>
                 <Link className='scrollto' to='/'>
-                  The Sports Bet Leader
+                  The Sports Bet Leader <span className='llc'>LLC</span>
                 </Link>{' '}
               </h1>
             </div>
@@ -206,11 +206,11 @@ class NewNav extends Component {
 
 NewNav.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logoutUser })(withRouter(NewNav));

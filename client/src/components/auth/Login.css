@@ -42,3 +42,10 @@
   border-color: blue;
   color: white;
 }
+.login-disclaimer {
+  color: white;
+}
+
+.redirect-to-register {
+  margin-left: 3px;
+}

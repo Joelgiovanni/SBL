@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Dashboard from '../layout/Dashboard';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
+
 import './Login.css';
 
 class Login extends Component {
@@ -14,7 +16,7 @@ class Login extends Component {
       password: '',
       success: false,
       token: {},
-      errors: {}
+      errors: {},
     };
   }
 
@@ -25,12 +27,12 @@ class Login extends Component {
     }
   }
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     const userData = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
     // Calling the actual Axios request through props
     this.props.loginUser(userData);
@@ -48,7 +50,7 @@ class Login extends Component {
     }
   }
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -68,7 +70,7 @@ class Login extends Component {
             <input
               type='email'
               className={classnames('form-control text-center', {
-                'is-invalid text-center': errors.email
+                'is-invalid text-center': errors.email,
               })}
               placeholder='Enter Email'
               name='email'
@@ -84,7 +86,7 @@ class Login extends Component {
             <input
               type='password'
               className={classnames('form-control text-center', {
-                'is-invalid text-center': errors.password
+                'is-invalid text-center': errors.password,
               })}
               placeholder='Enter Password'
               name='password'
@@ -100,6 +102,12 @@ class Login extends Component {
             Submit
           </button>
         </form>
+        <span className='login-disclaimer'>
+          If you dont have a login, please register{' '}
+          <Link className='redirect-to-register' to='/register'>
+            Here
+          </Link>{' '}
+        </span>
       </div>
     );
   }
@@ -108,12 +116,12 @@ class Login extends Component {
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 });
 
 export default connect(mapStateToProps, { loginUser })(Login);

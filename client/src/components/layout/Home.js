@@ -22,7 +22,7 @@ class Home extends Component {
           <div className='row'>
             <div className='col-lg-4 box'>
               <i className='ion-ios-heart-outline'></i>
-              <h2 className='title sub-title'>Daily</h2>
+              <h2 className='title sub-title'>Daily - $20</h2>
               <p className='description'>
                 A Daily pass for all of our picks is available for only $20
                 <br />{' '}
@@ -35,7 +35,7 @@ class Home extends Component {
             </div>
 
             <div className='col-lg-4 box box-bg'>
-              <h3 className='title sub-title'>Weekly</h3>
+              <h3 className='title sub-title'>Weekly - $100</h3>
               <p className='description'>
                 Weekly passes for all of our picks is available for only $100. -
                 (7 Calendars Days)
@@ -50,7 +50,7 @@ class Home extends Component {
 
             <div className='col-lg-4 box'>
               <i className='ion-ios-heart-outline'></i>
-              <h2 className='title sub-title'>Monthly</h2>
+              <h2 className='title sub-title'>Monthly - $350</h2>
               <p className='description'>
                 If you want the most bang for your buck, a monthly pass is the
                 way to go for $350. - (31 Calendar Days)
