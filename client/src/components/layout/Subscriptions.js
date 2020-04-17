@@ -15,33 +15,6 @@ class Subscriptions extends Component {
     }
   }
 
-  // One day pass - Checkout -LIVE
-  oneDayLive = (e) => {
-    var stripe = window.Stripe('pk_live_ZuXcysdButUm1bH2OK5eJBNi00eqonv5OH');
-
-    stripe
-      .redirectToCheckout({
-        items: [{ sku: 'sku_H5kH3mHxGuG0lu', quantity: 1 }],
-
-        // Do not rely on the redirect to the successUrl for fulfilling
-        // purchases, customers may not always reach the success_url after
-        // a successful payment.
-        // Instead use one of the strategies described in
-        // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: 'https://www.thesportsbetleader.com/success',
-        cancelUrl: 'https://www.thesportsbetleader.com/subscriptions',
-      })
-      .then(function (result) {
-        if (result.error) {
-          // If `redirectToCheckout` fails due to a browser or network
-          // error, display the localized error message to your customer.
-          var displayError = document.getElementById('error-message');
-          displayError.textContent = result.error.message;
-        } else {
-          alert('Success!!!');
-        }
-      });
-  };
   // One day pass - Checkout
   oneDay = (e) => {
     var stripe = window.Stripe('pk_live_ZuXcysdButUm1bH2OK5eJBNi00eqonv5OH');
@@ -147,9 +120,9 @@ class Subscriptions extends Component {
             </h6>{' '}
             <button
               className='pay-now-button'
-              id='checkout-button-sku_H5kegxSWoHuqYQ'
+              id='checkout-button-sku_H5kegxSWoHuqYQQ'
               role='link'
-              onClick={this.oneDayLive}
+              onClick={this.oneDay}
             >
               Checkout
             </button>

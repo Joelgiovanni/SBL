@@ -27,9 +27,9 @@ export default class Carousel extends Component {
                   <div className='carousel-content'>
                     <h2>The Sports Bet Leader</h2>
                     <p className='mb-3'>
-                      The Sports Bet Leader is the best in the business. With
-                      years of experience, we are commited to giving you the
-                      best picks!
+                      The Sports Bet Leader team is the best in the business.
+                      With years of experience, we are commited to giving you
+                      the best picks!
                     </p>
                     <Link className='get-started' to='/subscriptions'>
                       Get Started
@@ -50,9 +50,9 @@ export default class Carousel extends Component {
                   <div className='carousel-content'>
                     <h2>The Sports Bet Leader</h2>
                     <p className='mb-3'>
-                      The Sports Bet Leader is the best in the business. With
-                      years of experience, we are commited to giving you the
-                      best picks!
+                      The Sports Bet Leader team is the best in the business.
+                      With years of experience, we are commited to giving you
+                      the best picks!
                     </p>
                     <Link className='get-started' to='/subscriptions'>
                       Get Started
@@ -73,9 +73,9 @@ export default class Carousel extends Component {
                   <div className='carousel-content'>
                     <h2>The Sports Bet Leader</h2>
                     <p className='mb-3'>
-                      The Sports Bet Leader is the best in the business. With
-                      years of experience, we are commited to giving you the
-                      best picks!
+                      The Sports Bet Leader team is the best in the business.
+                      With years of experience, we are commited to giving you
+                      the best picks!
                     </p>
                     <Link className='get-started' to='/subscriptions'>
                       Get Started

@@ -17,7 +17,7 @@ class Card extends Component {
           <h5 className='card-title'>*{this.props.title}*</h5>
           <p className='card-text card-body'>{this.props.body}</p>
         </div>
-        <div className='card-footer text-success'>{this.props.date} </div>
+        <div className='card-footer text-success'> </div>
       </div>
     );
   }

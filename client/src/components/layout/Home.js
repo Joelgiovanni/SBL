@@ -70,16 +70,15 @@ class Home extends Component {
               <i class='fas fa-chart-line big-icon'></i>
               <p className='big-text mt-5 mb-4'>
                 The Sports Bet Leader team knows what sports betting is all
-                about. Follow our system to become a winner among winners.{' '}
+                about. Follow our system to become a winner among winners!{' '}
               </p>
             </div>
             <div className='col-md-6 text-center'>
               <h1 className='big-header mt-5'>Collect Big</h1>
               <i class='fas fa-dollar-sign big-icon'></i>
               <p className='big-text mt-5 mb-4'>
-                The Sports Bet Leader teams knows how to put money in your
-                pockets daily. Be part of the #1 sports consulting team in the
-                world
+                The Sports Bet Leader team knows how to put money in your pocket
+                daily. Be part of the #1 sports consulting team in the world.
               </p>
             </div>
           </div>

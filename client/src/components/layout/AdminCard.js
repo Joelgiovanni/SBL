@@ -79,10 +79,12 @@ class Card extends Component {
             Delete Post
           </button>
         </div>
-        <div className='card-footer text-success'>{this.props.date}</div>
+        <div className='card-footer text-success'></div>
       </div>
     );
   }
 }
+
+//{this.props.date}
 
 export default Card;
